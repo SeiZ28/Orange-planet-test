@@ -34,8 +34,8 @@ body {
 }
 
 #button {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     transition: transform 75ms ease;
 }
 
