@@ -4,21 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreCounterContainer = document.getElementById('score-counter-container');
     const energyBarInner = document.getElementById('energy-bar-inner');
     const energyText = document.getElementById('energy-text');
-    let score = 0.000;
-    let energy = 1000; // Initial energy
+    let score = 0.00;
+    let energy = 10.00; // Initial energy
 
-    const maxEnergy = 1000;
-    const energyRegenRate = 2; // Energy regenerated per second
+    const maxEnergy = 10.00;
+    const energyRegenRate = 0.01; // Energy regenerated per second
 
     buttonElement.addEventListener('click', async (event) => {
         if (energy > 0) {
             // Update score
-            score+=0.001;
-            score = parseFloat(score.toFixed(3));
-            scoreElement.textContent = score.toFixed(3);
+            score+=0.01;
+            score = parseFloat(score.toFixed(2));
+            scoreElement.textContent = score.toFixed(2);
 
             // Decrease energy
-            energy = Math.max(energy - 1, 0);
+            energy = Math.max(energy - 0.01, 0);
             updateEnergy();
 
             // Animate button
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Create and animate score counter
             const scoreCounter = document.createElement('div');
-            scoreCounter.textContent = '+0.001';
+            scoreCounter.textContent = '+0.01';
             scoreCounter.className = 'score-counter';
 
             scoreCounter.style.left = `${x}px`;
@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateEnergy() {
-        energyText.textContent = `${energy} / ${maxEnergy}`;
+        energy = parseFloat(energy.toFixed(2));
+        energyText.textContent = `${energy.toFixed(2)} / ${maxEnergy.toFixed(2)}`;
         const widthPercentage = (energy / maxEnergy) * 100;
         energyBarInner.style.width = `${widthPercentage}%`;
     }
