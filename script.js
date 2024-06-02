@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreCounterContainer = document.getElementById('score-counter-container');
     const energyBarInner = document.getElementById('energy-bar-inner');
     const energyText = document.getElementById('energy-text');
-    let score = 0;
+    let score = 0.000;
     let energy = 1000; // Initial energy
 
     const maxEnergy = 1000;
@@ -13,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonElement.addEventListener('click', async (event) => {
         if (energy > 0) {
             // Update score
-            score++;
-            scoreElement.textContent = score;
+            score+=0.001;
+            score = parseFloat(score.toFixed(3));
+            scoreElement.textContent = score.toFixed(3);
 
             // Decrease energy
             energy = Math.max(energy - 1, 0);
@@ -33,17 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Create and animate score counter
             const scoreCounter = document.createElement('div');
-            scoreCounter.textContent = '+1';
+            scoreCounter.textContent = '+0.001';
             scoreCounter.className = 'score-counter';
 
             scoreCounter.style.left = `${x}px`;
             scoreCounter.style.top = `${y}px`;
             scoreCounterContainer.appendChild(scoreCounter);
 
-            await sleep(50);
+            await sleep(30);
 
             scoreCounter.style.opacity = '0';
-            scoreCounter.style.top = `${y - 100}px`;
+            scoreCounter.style.top = `${y - 200}px`;
 
             await sleep(1000);
 
