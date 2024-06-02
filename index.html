@@ -1,25 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NameCoin</title>
+    <title>Orange Planet</title>
+    <link rel="shortcut icon" href="assets/icons/logo_tab.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <div id="score">0</div>
-        <div id="main-container">
-            <img id="button" src="assets/icons/button.png" alt="Button">
-            <div id="score-counter-container"></div>
-        </div>
-        <div id="energy-container">
-            <div id="energy-text">1000 / 1000</div>
-            <div id="energy-bar">
-                <div id="energy-bar-inner"></div>
+    <div class="page">
+        <header class="header">
+            <div class="leftside header">
+                <div class="profit-for-hour container">
+                    <img class="coin img-20" src="assets/icons/coin.png">
+                    <span class="profit span-bold">0.000</span><span class="profit span-normal"> / час</span>
+                </div>
+                <div class="profit-for-click container">
+                    <img class="coin img-20" src="assets/icons/coin.png">
+                    <span class="profit span-bold">0.001</span><span class="profit span-normal"> за клик</span>
+                </div>
             </div>
+
+            <div class="rightside header">
+                <div class="profile-info container">
+                    <span class="profile-info-name">SeiZ</span>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div id="score-container">
+                <span id="score">0.000</span>
+            </div>
+            <div id="main-container">
+                <button id="button"></button>
+                <div id="score-counter-container"></div>
+            </div>
+            <div id="energy-container">
+                <div class="enegry-info-container">
+                    <div class="enegry-count-container">
+                        <img class="coin img-20" src="assets/icons/coin.png">
+                        <span id="energy-text">1000 / 1000</span>
+                    </div>
+                    <a href="" class="boost-button">
+                        <span>boost</span>
+                    </a>
+                </div>
+                <div id="energy-bar">
+                    <div id="energy-bar-inner"></div>
+                </div>
+            </div>
+        </main>
+        <div class="menu-bar">
+            <nav class="menu-bar-nav">
+                <a href="" class="menu-button select">
+                    <div>
+                        <p>Main</p>
+                    </div>
+                </a>
+                <a href="" class="menu-button no-select">
+                    <div>
+                        <p>Upgrade</p>
+                    </div>
+                </a>
+                <a href="" class="menu-button no-select">
+                    <div>
+                        <p>Earn</p>
+                    </div>
+                </a>
+                <a href="" class="menu-button no-select">
+                    <div>
+                        <p>Referals</p>
+                    </div>
+                </a>
+            </nav>
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
+
 </html>
