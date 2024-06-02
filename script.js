@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxEnergy = 10.00;
     const energyRegenRate = 0.01; // Energy regenerated per second
 
-    buttonElement.addEventListener('mouseup', async (event) => {
+    buttonElement.addEventListener('touchend', async (event) => {
         if (energy > 0) {
             // Update score
             score+=0.01;
