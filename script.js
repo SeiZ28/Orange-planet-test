@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxEnergy = 10.00;
     const energyRegenRate = 0.01; // Energy regenerated per second
 
-    buttonElement.addEventListener('click', handleMouseButtonClick);
+    buttonElement.addEventListener('mouseup', handleMouseButtonClick);
     buttonElement.addEventListener('touchend', handleButtonClick);
 
     async function handleMouseButtonClick(event) {
