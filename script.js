@@ -98,6 +98,7 @@ async function handleButtonClick(event) {
                 await sleep(1000);
 
                 scoreCounterContainer.removeChild(scoreCounter);
+                break;
             }
         }
     }
